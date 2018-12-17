@@ -13,6 +13,12 @@ spring:
    driver-class-name: com.mysql.cj.jdbc.Driver
    username: root
    password: 123456
+
+   type: com.alibaba.druid.pool.DruidDataSource
+   #配置监控统计拦截的filters,如果不写控制界面中的sql无法进行统计."wall"用于防火墙
+   filters: stat , wall , log4j
+   #通过connectionProperties 属性来打开mergeSql功能,监测慢sql的记录
+   connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMills=5000
  #redis
   redis:
     host: localhost

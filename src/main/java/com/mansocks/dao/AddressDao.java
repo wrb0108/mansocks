@@ -1,6 +1,8 @@
 package com.mansocks.dao;
 
 import com.mansocks.entity.Address;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +13,11 @@ public interface AddressDao {
 
     @Select("SELECT * from address where userid=#{userid}")
     List<Address> select(int userid);
-    int add(Address address);
-    int del(int addressid);
+
+    @Insert("insert into address (province,area,street,userid) values (#{province},#{area},#{street},#{userid})")
+    void add(Address address);
+
+    @Delete("delete from address where addressid")
+    void del(int addressid);
 
 }
