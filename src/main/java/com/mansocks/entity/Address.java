@@ -4,7 +4,15 @@ public class Address {
     private String province; //省
     private String area;  //区
     private String street; //街道
-    private  int userid;
+    private int userid;
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
 
     public String getProvince() {
         return province;
@@ -30,11 +38,4 @@ public class Address {
         this.street = street;
     }
 
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
 }
